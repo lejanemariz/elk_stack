@@ -1,0 +1,25 @@
+---
+## [docker and elasticsearch]
+- name: Install Docker and elasticsearch
+  hosts: elk_stack
+  gather_facts: no 
+  roles:
+    - docker-install 
+
+- name: Install Docker and elasticsearch
+  hosts: elasticsearch
+  gather_facts: no 
+  roles:
+    - elasticsearch
+
+## [kibana]
+- hosts: kibana
+  gather_facts: no
+  roles:
+    - kibana 
+
+## [logstash]
+- hosts: logstash
+  gather_facts: no
+  roles:
+    - logstash 

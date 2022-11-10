@@ -1,0 +1,13 @@
+- name: Copy Dockerfile
+  copy:
+    src: ~/devOps/Docker/elk_stack/DK/logstash/
+    dest: /home/ubuntu/logstash/
+    owner: root
+    group: root
+    mode: '0644'
+    backup: no
+
+- name: logstash deploy
+  shell: |
+    cd logstash
+    sudo docker-compose up -d

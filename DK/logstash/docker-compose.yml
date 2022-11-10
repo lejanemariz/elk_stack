@@ -1,0 +1,16 @@
+version: "3.0"
+services:
+  kibana:
+    container_name: kb-container
+    image: docker.elastic.co/logstash/logstash:8.5.0
+    environment:
+      - ELASTICSEARCH_HOSTS=http://34.222.82.42:9200
+    networks:
+      - bridge
+    depends_on:
+      - elasticsearch
+    ports:
+      - 5601:5601
+networks:
+  bridge:
+    driver: bridge

@@ -1,0 +1,14 @@
+- name: Copy Dockerfile
+  copy:
+    src: ~/devOps/Docker/elk_stack/DK/elasticsearch/
+    dest: /home/ubuntu/elasticsearch/
+    owner: root
+    group: root
+    mode: '0644'
+    backup: no
+
+- name: Elasticsearch deploy
+  shell: |
+    cd elasticsearch
+    sudo docker-compose up -d
+
