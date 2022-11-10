@@ -1,4 +1,12 @@
 ---
+- name: Create instances using terraform
+  shell: |
+    terraform destroy --auto-approve
+    terraform init
+    terraform apply --auto-approve
+  register: a
+
+- name: copy IP addresses
 ## [docker and elasticsearch]
 - name: Install Docker and elasticsearch
   hosts: elk_stack
