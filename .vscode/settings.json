@@ -1,0 +1,7 @@
+{
+    "scm.alwaysShowActions": true,
+    "scm.alwaysShowRepositories": true,
+    "gitlens.detectNestedRepositories": false,
+    "gitlens.advanced.commitOrdering": "author-date",
+    "yaml.trace.server": "off"
+}
